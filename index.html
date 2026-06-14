@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBC Bangla</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Noto Sans Bengali", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <div class="bg-red-600 py-4 md:py-5">
+      <div class="max-w-7xl mx-auto px-4 md:px-5">
+        <img class="invert w-32 md:w-auto" src="./assets/logo.svg" alt="" />
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+      <nav class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <ul
+          id="category-container"
+          class="flex gap-6 text-sm md:text-base max-w-7xl mx-auto px-4 lg:px-6 overflow-x-auto whitespace-nowrap py-3 scrollbar-hide"
+        ></ul>
+      </nav>
+    </header>
+
+    <!-- Main Layout -->
+    <main
+      class="max-w-7xl mx-auto px-4 lg:px-6 mt-6 lg:mt-8 grid grid-cols-1 xl:grid-cols-4 gap-6"
+    >
+      <!-- News Section -->
+      <div
+        id="news-container"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:col-span-3 gap-6"
+      >
+        <div class="col-span-full flex justify-center items-center">
+          <span
+            class="loading loading-spinner text-error items-center min-h-[400px]"
+          ></span>
+        </div>
+      </div>
+
+      <!-- Bookmark Section -->
+      <div
+        class="xl:col-span-1 bg-white border border-gray-200 rounded-lg overflow-hidden h-fit xl:sticky xl:top-5"
+      >
+        <div class="flex justify-between items-center border-b border-gray-300">
+          <h1 class="bg-red-500 text-white px-4 py-3 font-semibold">
+            Bookmark
+          </h1>
+
+          <p
+            id="bookmark-count"
+            class="bg-red-500 text-white px-4 py-2 rounded-lg mr-3"
+          >
+            0
+          </p>
+        </div>
+
+        <div
+          id="bookmark-container"
+          class="max-h-[500px] overflow-y-auto"
+        ></div>
+      </div>
+    </main>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+    <dialog id="news_details_modal" class="modal">
+      <div class="modal-box">
+        <div id="modal-container" class=""></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./script/index.js"></script>
+  </body>
+</html>
